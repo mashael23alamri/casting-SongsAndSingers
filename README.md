@@ -4,6 +4,7 @@ This API is responsible for checking permissions and handling CRUD for singer an
 
 #Working App:
 To view the production app it can be accessed from https://singersandsongs.herokuapp.com/ Currently there is a simple front end but it is not yet working. However, it can be used via the API endpoints mentioned in this readme.
+![Optional Text](../master/page/img/web.jpg)
 
 ## let's start
 ### Installing Dependencies
