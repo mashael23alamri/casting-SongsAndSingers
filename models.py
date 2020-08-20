@@ -15,6 +15,8 @@ database_name = "capstone"
 database_path = os.environ['DATABASE_URL']
 conn = psycopg2.connect(database_path, sslmode='require')
 
+db = SQLAlchemy()
+
 '''
 setup_db(app)
     binds a flask application and a SQLAlchemy service
