@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<title>Songs</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<style>
+
+   body,h1,h2,h3,h4,h5,h6 {
+     font-family: "Karma", sans-serif
+   }
+
+   .w3-bar-block .w3-bar-item {
+     padding:20px
+   }
+
+</style>
+<body>
+
+
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()"
+  class="w3-bar-item w3-button">Close Menu</a>
+  <a href="#song" onclick="w3_close()" class="w3-bar-item w3-button">Songs</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
+  <a href="http://dev-capstone.us.auth0.com/authorize?audience=http://localhost:5000&response_type=token&client_id=o3YJrmT7VDgNdXUJxLcm9FQ3FOGshW2Z&redirect_uri=http://localhost:8000" onclick="w3_close()" class="w3-bar-item w3-button">Login</a>
+</nav>
+
+
+<div class="w3-top">
+  <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
+    <div class="w3-button w3-padding-16 w3-left" style='color:#b30059' onclick="w3_open()">☰</div>
+    <div class="w3-right w3-padding-16"><i class='fas fa-music' style='font-size:35px;color:#b30059'></i></div>
+    <div class="w3-center w3-padding-16" style='font-size:35px;color:#b30059' >SONGS</div>
+    <p  style='background-color:#b30059; font-size:14px; color:white;text-align:center'>Website is under construction..to be completed soon :)</p>
+  </div>
+</div>
+
+
+<div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
+
+
+  <div class="w3-row-padding w3-padding-16 w3-center" id="song">
+    <div class="w3-quarter">
+
+      <img src="../img/hello.jpeg" alt="Hello" style="width:250px;height:154px;">
+
+      <h3 style="font-weight:bold;color:#b30059">Hello</h3>
+      <p style="color:#4d0028">Release date: 2017</p>
+      <a href="https://soundcloud.com/gracedaviesofficial/hello-adele" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+    <div class="w3-quarter">
+      <img src="../img/rain.jpg" alt="Rain on me" style="width:100%">
+      <h3 style="font-weight:bold;color:#b30059">Rain On Me</h3>
+      <p style="color:#4d0028">Release date: 2020</p>
+      <a href="https://soundcloud.com/planeterap1/lady-gaga-feat-ariana-grande-rain-on-me" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+    <div class="w3-quarter">
+      <img src="../img/i love it.jpg" alt="Cherries" style="width:250px;height:154px;">
+      <h3 style="font-weight:bold;color:#b30059">I Love IT</h3>
+      <p style="color:#4d0028">Release date: 2019</p>
+      <a href="https://soundcloud.com/connorjobes18/cadet-x-yungen-i-love-it-kanye-west-lil-pump-uk-remix-audio-grm-daily-320-kbps" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+    <div class="w3-quarter">
+      <img src="../img/love.jpg" alt="love" style="width:100%">
+      <h3 style="font-weight:bold;color:#b30059"> Love Yourself</h3>
+      <p style="color:#4d0028">Release date: 2015</p>
+      <a href="https://soundcloud.com/riefkyhasymi/justin-bieber-love-yourself" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="../img/blank space.jpg" alt="blank space" style="width:250px;height:154px;">
+      <h3 style="font-weight:bold;color:#b30059">Blank Space</h3>
+      <p style="color:#4d0028">Release date: 2014</p>
+      <a href="https://soundcloud.com/h-m-h-m-d-4/blank-space-by-taylor-swift" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+    <div class="w3-quarter">
+      <img src="../img/roar.jpg" alt="roar" style="width:100%">
+      <h3 style="font-weight:bold;color:#b30059">roar</h3>
+      <p style="color:#4d0028">Release date: 2013</p>
+      <a href="https://soundcloud.com/mlche/roar-studio-version-bbc-radio-1s-big-weekend-2017" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+    <div class="w3-quarter">
+      <img src="../img/back to you.png" alt="back to you" style="width:250px;height:154px;">
+      <h3 style="font-weight:bold;color:#b30059">Back To You</h3>
+      <p style="color:#4d0028">Release date: 2018</p>
+      <a href="https://soundcloud.com/hotmusicturkey/back-to-you" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+    <div class="w3-quarter">
+      <img src="../img/loyal.jpg" alt="loyal" style="width:250px;height:154px;">
+      <h3 style="font-weight:bold;color:#b30059" >Loyal</h3>
+      <p style="color:#4d0028">Release date: 2014</p>
+      <a href="https://soundcloud.com/chris_brown/chris-brown-loyal-east-coast" style="color:#b30059"><i class='fas fa-music' style='color:#b30059'></i> Listen</a>
+    </div>
+  </div>
+
+
+  <div class="w3-center w3-padding-32">
+    <div class="w3-bar" style="color:#99004f">
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
+      <a href="#" class="w3-bar-item w3-black w3-button">1</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
+      <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
+    </div>
+  </div>
+
+  <hr id="about">
+
+
+  <div class="w3-container w3-padding-32 w3-center">
+    <h3 style="color:#99004f">About Songes <i class='fas fa-music' style='font-size:20px;color:#b30059'></i></h3><br>
+    <div class="w3-padding-32">
+      <h4><b>who am I!</b></h4>
+      <h6><i> API specializing in songs</i></h6>
+      <p>Songs API designs company responsible for song creation and management, hiring singers for those songs.</p>
+      <p>This API is responsible for checking permissions and handling CRUD for singer and song model</p>
+    </div>
+  </div>
+  <hr>
+  <div>
+
+
+  </div>
+
+
+  <footer class="w3-row-padding w3-padding-32">
+    <div class="w3-third">
+      <h3>FOOTER</h3>
+      <p>Share with us the songs you like to be added to the site.</p>
+      <p>Email <a href="mailto:a2030alamri95@gmail.com">Here</a></p>
+    </div>
+
+    <div class="w3-third">
+      <h3>BLOG POSTS</h3>
+      <ul class="w3-ul w3-hoverable">
+         <li class="w3-padding-16">
+         <i class='fas fa-headphones'></i>
+          <span class="w3-large">Songs</span><br>
+          <a href="#s" id ="s" class="w3-bar-item w3-button w3-hover-black">soon</a>
+        </li>
+        <li class="w3-padding-16">
+          <i class='fas fa-microphone-alt'></i>
+          <span class="w3-large">Singers</span><br>
+          <a href="#i" id="i" class="w3-bar-item w3-button w3-hover-black">soon</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="w3-third w3-serif">
+      <h3>POPULAR TAGS</h3>
+      <p>
+        <span class="w3-tag w3-black w3-margin-bottom">Selena</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Lady</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Taylor</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Katy</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Adele</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Billie</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Kanye</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ariana</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
+        <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Justin</span> <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Irina</span>
+      </p>
+    </div>
+  </footer>
+
+<
+</div>
+
+<script>
+
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>
