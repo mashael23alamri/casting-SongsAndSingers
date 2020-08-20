@@ -4,7 +4,7 @@ This API is responsible for checking permissions and handling CRUD for singer an
 
 #Working App:
 To view the production app it can be accessed from https://singersandsongs.herokuapp.com/ Currently there is a simple front end but it is not yet working. However, it can be used via the API endpoints mentioned in this readme.
-![Optional Text](../master/page/img/web.jpg)
+![web](../master/page/img/web.jpg)
 
 ## let's start
 ### Installing Dependencies
@@ -54,30 +54,7 @@ flask run
 ### To test the code:
 
 go to the root directory of this project and , simply run the test_app.py by typing:
-```bash
- pytest test_app.py
-```
-The test should end with seventeen (16) successful endpoint test results.
-
-```bash
-Mashaels-MacBook-Pro:starter mashaelalamri$ pytest test_app.py
-=================================== test session starts ====================================
-platform darwin -- Python 3.8.3, pytest-5.4.3, py-1.9.0, pluggy-0.13.1
-rootdir: /Users/mashaelalamri/Desktop/capstone 2/starter
-plugins: celery-4.4.7
-collected 16 items
-
-test_app.py ................                                                         [100%]
-=================================== 16 passed in 12.55s ====================================
-```
-### Error Handling
-Errors are returned as JSON objects in the following format:
-#### EX: errorhandler when unprocessable and status code 422
-```bash
-"success": False,
-    "error": 422,
-    "message": "Unprocessable."
-```
+![web](../master/page/img/text.jpg)
 ## Best Practices for REST API Error Handling
 -400: Bad Request.
 -404: Resource Not Found.
