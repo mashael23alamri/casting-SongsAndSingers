@@ -12,8 +12,8 @@ from sqlalchemy.orm import backref
 
 database_name = "capstone"
 #database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
-DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+database_path = os.environ['DATABASE_URL']
+conn = psycopg2.connect(database_path, sslmode='require')
 
 '''
 setup_db(app)
