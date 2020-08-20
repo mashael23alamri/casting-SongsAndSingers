@@ -54,7 +54,7 @@ flask run
 ### To test the code:
 
 go to the root directory of this project and , simply run the test_app.py by typing:
-![web](../master/page/img/text.jpg)
+![web](../master/page/img/test.jpg)
 ## Best Practices for REST API Error Handling
 -400: Bad Request.
 -404: Resource Not Found.
