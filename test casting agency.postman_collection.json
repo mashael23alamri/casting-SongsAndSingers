@@ -1,0 +1,1341 @@
+{
+	"info": {
+		"_postman_id": "59ac27e5-64ba-430d-9957-3242ef6bea2e",
+		"name": "casting agency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "assistant casting",
+			"item": [
+				{
+					"name": "Get singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "80a3d78d-f670-402d-8c63-a70f18e2e251",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "16f25f6c-8bbc-4090-aaf3-892f5e6fe4ef",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.songs).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4473674f-831e-4b6d-8e4b-79ae6880f86c",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Person\",\n\t\"age\": 21,\n\t\"gender\": \"female\",\n\t\"id_singer\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "ef4d2199-a681-47ea-9d40-ebf1b8874565",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Avengers\",\n\t\"release_date\": \"2021-10-1 04:22\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b7ef41ed-20aa-4cd8-97c8-4d510902c329",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"francis\",\n\t\"age\": 21,\n\t\"gender\": \"female\",\n\t\"id_singer\": 1\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers",
+								"10"
+							],
+							"variable": [
+								{
+									"key": "singerid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "fabb565c-74df-4a2a-a09e-297d7545531c",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Night Crawl\",\n\t\"release_date\": \"2021-10-1 04:22\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs",
+								"10"
+							],
+							"variable": [
+								{
+									"key": "songid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c52497d2-9993-4466-8317-c30087ce365d",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers",
+								"3"
+							],
+							"variable": [
+								{
+									"key": "singerid",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a16bce56-7f23-4bd5-a8f7-0ce135c74fc6",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs",
+								"3"
+							],
+							"variable": [
+								{
+									"key": "songid",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImpsYWh6ajhZM2twd2wzYjZZNE0yQyJ9.eyJpc3MiOiJodHRwczovL2Rldi1jYXBzdG9uZS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYzMzFiMjQzYWNkMGUwMDNhMWEwYWU1IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNTk3ODQyOTQxLCJleHAiOjE1OTc4OTMzNDEsImF6cCI6Im8zWUpybVQ3VkRnTmRYVUp4TGNtOUZRM0ZPR3NoVzJaIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJnZXQ6c2luZ2VycyIsImdldDpzb25ncyJdfQ.U6N2eAyIdKNNnFkFonRBfV93h0fh8XjRtaAZp98mmeCIAQk-6Glm8aaFNEajZr3ZwOXYqRMtgm6ZlcmmGZzMONzvaVUqraSJ53B2Qi5vNx3l5DmQVKnYhU6TXmt_6_vB7WqReaC9uCBRghNdQl4KMYLsRXF5Pm_FPlscHS_vqoVDOzlQU2QF3dQs-UgaNG-u4_O56627EypZbdMLl5mjax-VkrH9JnRltwhrIfH3na35d-UiWP7NckeNEHfdyi45qWOKQtWk7jK3esuac5lxSPWcsqn4x8TIdPBCWK66oC-0B5gWLle6468OOkTrRLiw5RkfO-4gHIpM0K16PiMnvA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "57870060-5618-4dc3-91e1-31e6d2196dda",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "8555afaf-5930-490f-803d-3016056a7ab0",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "director casting",
+			"item": [
+				{
+					"name": "Get singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c467f490-9757-491d-9f66-f578066b1c20",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "4256a2c4-4e77-47f3-a85e-41cc3fefc334",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.songs).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "58eff957-46aa-4655-9403-623863147611",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Sean Kingston\",\n\t\"age\": 31,\n\t\"gender\": \"female\",\n\t\"id_singer\": 13\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8ba207ce-d492-4725-9a49-d825af9fac73",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Tim McGraw\",\n\t\"release_date\": \"2021-10-8 04:22\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0c41e711-b2c8-458d-8820-bf119e29565d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Sean Kingston\",\n\t\"age\": 31,\n\t\"gender\": \"female\",\n\t\"id_singer\": 13\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f4070990-3c09-4581-9632-7c8ceec3a285",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.songs).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"love story\",\n\t\"release_date\": \"2021-10-6 08:22\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs/10",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e3f0927c-e628-4d10-8258-086aeb288e85",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1b93d7e7-e15e-4481-bc99-15c980dbb8e2",
+								"exec": [
+									"pm.test(\"Status code is 401\", function () {",
+									"    pm.response.to.have.status(401);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs/3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImpsYWh6ajhZM2twd2wzYjZZNE0yQyJ9.eyJpc3MiOiJodHRwczovL2Rldi1jYXBzdG9uZS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYzNjljOWNmZTQ1MjcwMDZkOTMxNDgxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNTk3ODQyOTk5LCJleHAiOjE1OTc4OTMzOTksImF6cCI6Im8zWUpybVQ3VkRnTmRYVUp4TGNtOUZRM0ZPR3NoVzJaIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6c2luZ2VycyIsImdldDpzaW5nZXJzIiwiZ2V0OnNvbmdzIiwicGF0Y2g6c2luZ2VycyIsInBhdGNoOnNvbmdzIiwicG9zdDpzaW5nZXJzIl19.X1nZ1uSjkp-_HQ0b3KyI2Bv6UFAoXZaUcSo1eSY8NZ4kIuOXwczzeBe-qZOhfbvGh48Z1lx6LZLs3lw8kOqL4n0ig6bABryKfihWhB1rhsynpEYiJvLSOBP_zusY7hTGKB-LtDGgb_ld8vjbl_5XGQfFGLu4CX4-ByO86TlXTljzwjcyDMvhwKApyMDe7hF8BBb_mY5dfqEuhH9Ou7akPivkBT0Vc339z23ixei9_p1gcvDMYXwizVr8Y3Zou4HBGQvUHh15ofxys2itEoGmBSvzc-WdK91ev7k7enz3cJCjMcXxLFfKR7bXnObYOzlSU4iUAXEec11xL-pqEnnGVg",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d4fd3d05-0ca6-47a8-bc53-984e7cd3b641",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7a3bf6e5-545a-4b16-8bc5-033e45c3faab",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "executive producer",
+			"item": [
+				{
+					"name": "Get singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5174d050-81f9-4dd9-9336-67a4fd1c9eb9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers?offset=1&limit=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e23eed82-6627-49c1-b453-41dc8478a8c9",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.songs).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs?offset=1&limit=3",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "22ef66b5-49c2-4a48-a69b-dda62d402845",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Lady Gaga\",\n\t\"age\": 34,\n\t\"gender\": \"female\",\n\t\"id_singer\": 6\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "6723c239-d109-47fb-8c78-8cdb1a3ed161",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.songs).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Rian on Me\",\n\t\"release_date\": \"2020-10-1 04:22\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "08d811dd-d135-47c2-9dbe-24f9369614e1",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.singers).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"Kanye west\",\n\t\"age\": 42,\n\t\"gender\": \"male\",\n\t\"id_singer\": 1\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "a0f8aba3-2a12-4b39-8b06-acb995a47a27",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"value contains array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData.songs).to.be.an('array')",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\": \"Rain On Me\",\n\t\"release_date\": \"2019-10-2 09:22\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs/2",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE singers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "bd9f2123-ef64-482a-bcb0-73a147354225",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/singers/9",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"singers",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE songs",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "06c70894-de92-4095-8297-494716d47d5e",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/songs/8",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"songs",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6ImpsYWh6ajhZM2twd2wzYjZZNE0yQyJ9.eyJpc3MiOiJodHRwczovL2Rldi1jYXBzdG9uZS51cy5hdXRoMC5jb20vIiwic3ViIjoiYXV0aDB8NWYzMzFjZjA2OGRlOTkwMDM3NDcxMTI4IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo1MDAwIiwiaWF0IjoxNTk3ODQzMTAwLCJleHAiOjE1OTc4OTM1MDAsImF6cCI6Im8zWUpybVQ3VkRnTmRYVUp4TGNtOUZRM0ZPR3NoVzJaIiwic2NvcGUiOiIiLCJwZXJtaXNzaW9ucyI6WyJkZWxldGU6c2luZ2VycyIsImRlbGV0ZTpzb25ncyIsImdldDpzaW5nZXJzIiwiZ2V0OnNvbmdzIiwicGF0Y2g6c2luZ2VycyIsInBhdGNoOnNvbmdzIiwicG9zdDpzaW5nZXJzIiwicG9zdDpzb25ncyJdfQ.NkINmyK_SyTalYKUfq4voLQTOryUK1juVkZE30-xwZFCiM2BfTbUJxtUzhVfTd0VvKewoY2b0vjgTzIqz_ZpsWF_kwHVUW4wuGaPb7uZzyqComtAr7brbqVVNxosCpIK_DU7YvFOLQ27Zd5tjWdBYcbbEpv58Y4cOXoGOR75VRzoo0jhKF1pMWwHVEW10b-RzDTozJGWKRQyEIUhHSTjNXvfPV_bN-njcqNC73FY2NxjaeNrdOV3yPJ9hYiU0MDWPNif8T78YeyuXrWyS7nBFwhLk2GWIAj3zCpkYQSsA92rMwO6UkKHBvyBRXWaJ-m9TYXimdT_LWg46Ug7198KKw",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "155ee1da-6bef-4852-ae63-752b8d94b624",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "7891421c-d5e3-4fe9-a9cd-817f2002f14d",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
