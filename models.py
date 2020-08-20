@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import Column, String, Integer, create_engine, Date, Table, ForeignKey
 import psycopg2
 from sqlalchemy.orm import backref
+from app import app
 
 
 #App Config#
