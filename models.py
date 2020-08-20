@@ -2,16 +2,18 @@ import os
 from flask import Flask
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
-
 from sqlalchemy import Column, String, Integer, create_engine, Date, Table, ForeignKey
+import psycopg2
+from sqlalchemy.orm import backref
 
 
 #App Config#
 #--------------------------------------------------------------------------------------#
 
 database_name = "capstone"
-database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
-
+#database_path = "postgresql://{}/{}".format('localhost:5432', database_name)
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 '''
 setup_db(app)
